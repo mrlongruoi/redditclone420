@@ -156,7 +156,7 @@ export async function createPost({
       const authContext = await auth.protect();
       const toolkit = await createClerkToolkit({ authContext });
       const result = await generateText({
-        model: openai("gpt-4.1-mini"),
+        model: openai("gpt-4.1"),
         messages: messages as CoreMessage[],
         // Conditionally inject session claims if we have auth context
         system: toolkit.injectSessionClaims(systemPrompt),
